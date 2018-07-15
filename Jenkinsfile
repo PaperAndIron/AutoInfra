@@ -8,8 +8,6 @@ stage('test') {
   }
 stage('TFPlan') {
   node {
-    dir('src') {
-      sh '/usr/local/bin/terraform init -input=false'
-    }
+    sh '/usr/local/bin/terraform init -input=false'
   }
 }
