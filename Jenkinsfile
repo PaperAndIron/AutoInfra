@@ -5,4 +5,3 @@ stage('test') {
     sh "ls -al"
     }
   }
-}
