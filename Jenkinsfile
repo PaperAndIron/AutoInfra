@@ -6,3 +6,10 @@ stage('test') {
     sh "ls -al"
     }
   }
+stage('TFPlan') {
+  node {
+    dir('src') {
+      sh 'terraform init -input=false'
+    }
+  }
+}
