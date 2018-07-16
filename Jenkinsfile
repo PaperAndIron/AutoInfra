@@ -11,6 +11,6 @@ stage('TFInit_with_tool')
 {
   node {
     def terraformPath = tool 'Terraform'
-    ${terraformPath}\\terraform init -input=false
+    ${terraformPath}/terraform init -input=false
   }
 }
