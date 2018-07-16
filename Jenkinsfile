@@ -10,7 +10,9 @@ stage('test') {
 stage('TFInit_with_tool')
 {
   node {
-    def terraformPath = tool 'Terraform'
-    sh 'terraform init -input=false'
+    def terraform_version = 'Terraform'
+    withEnv( ["PATH+TERRAFORM=${tool terraform_version}"] ) {
+      sh "terraform init"
+}
   }
 }
