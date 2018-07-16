@@ -6,13 +6,11 @@ stage('test') {
     sh "ls -al"
     }
   }
-stage('TFInit') {
+
+stage('TFInit_with_tool')
+{
   node {
-    sh '/usr/local/bin/terraform init -input=false'
-  }
-}
-stage('TFPlan') {
-  node {
-    sh '/usr/local/bin/terraform plan'
+    def terraformPath = tool 'Terraform'
+    ${terraformPath}\\terraform init -input=false
   }
 }
